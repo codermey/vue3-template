@@ -9,6 +9,8 @@
 
   <p>x:{{ x }} y:{{ y }}</p>
   <p>sourceType:{{ sourceType }}</p>
+
+  <HelloWorld />
 </template>
 
 <script setup lang="ts">

@@ -6,6 +6,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import AutoImport from 'unplugin-auto-import/vite'
 
+import Components from 'unplugin-vue-components/vite'
+
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 
@@ -31,7 +33,8 @@ export default defineConfig({
         '@vueuse/core',
         VueRouterAutoImports
       ]
-    })
+    }),
+    Components({})
   ],
   resolve: {
     alias: {
