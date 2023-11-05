@@ -10,7 +10,8 @@
   <p>x:{{ x }} y:{{ y }}</p>
   <p>sourceType:{{ sourceType }}</p>
 
-  <HelloWorld />
+  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" @click-button="(val) => console.log(val)" />
+  <Children msg="This is an children component" />
 
   <!-- A basic anchor icon from Phosphor icons -->
   <div class="i-ph-anchor-simple-thin" />

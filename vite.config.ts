@@ -5,11 +5,12 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import AutoImport from 'unplugin-auto-import/vite'
-
 import Components from 'unplugin-vue-components/vite'
 
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+
+import Layouts from 'vite-plugin-vue-layouts'
 
 import UnoCSS from 'unocss/vite'
 
@@ -34,7 +35,11 @@ export default defineConfig({
         VueRouterAutoImports
       ]
     }),
-    Components({})
+    Components({}),
+    Layouts({
+      layoutsDirs: 'src/layouts',
+      defaultLayout: 'default'
+    })
   ],
   resolve: {
     alias: {

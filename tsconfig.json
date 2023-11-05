@@ -10,5 +10,30 @@
     {
       "path": "./tsconfig.vitest.json"
     }
-  ]
+  ],
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue-macros/volar/define-options",
+      "@vue-macros/volar/define-models",
+      "@vue-macros/volar/define-props",
+      "@vue-macros/volar/define-props-refs",
+      "@vue-macros/volar/short-vmodel",
+      "@vue-macros/volar/define-slots",
+      "@vue-macros/volar/jsx-directive",
+      "@vue-macros/volar/setup-jsdoc",
+      "@vue-macros/volar/export-expose"
+      // "@vue-macros/volar/export-props"
+    ]
+    // "vueMacros": {
+    //   "exportExpose": {
+    //     "include": ["**/export-expose/**"]
+    //   },
+    //   "exportProps": {
+    //     "include": ["**/export-props/**"]
+    //   },
+    //   "exportRender": {
+    //     "include": ["**/export-render/**"]
+    //   }
+    // }
+  }
 }

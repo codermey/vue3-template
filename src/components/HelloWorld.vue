@@ -1,11 +1,16 @@
 <script setup lang="ts">
-defineProps<{
+const { msg } = defineProps<{
   msg: string
 }>()
+
+const emits = defineEmits<{ clickButton: [val: string] }>()
+
+console.log('🚀 ~ file: HelloWorld.vue:3 ~ msg:', msg)
 </script>
 
 <template>
   <h1 class="green">{{ msg }}</h1>
+  <button @click="emits('clickButton', '点击了button')">点击</button>
 </template>
 
 <style lang="scss" scoped>
