@@ -1,7 +1,6 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <HelloWorld msg="You did it!" />
+  <h1>This is an App page</h1>
+  <router-view></router-view>
 </template>
