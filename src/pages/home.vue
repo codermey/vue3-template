@@ -1,30 +1,7 @@
 <template>
-  <div class="home">
-    <h1>This is an home page</h1>
-  </div>
+  <div class="home">This is the home page</div>
 </template>
 
-<script setup lang="ts">
-// 重定向方案二
-// import { useRouter } from 'vue-router'
+<script setup lang="ts"></script>
 
-// const router = useRouter()
-// router.push('/')
-</script>
-
-<style scoped lang="scss"></style>
-
-<!-- 重定向方案三 -->
-<!-- <route>
-{
-  name: "home",
-  redirect:"/"
-}
-</route> -->
-
-<!-- 重定向方案四 -->
-<!-- <route lang="yaml">
-name: home
-redirect:
-  path: /
-</route> -->
+<style scoped></style>
