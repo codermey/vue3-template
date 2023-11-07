@@ -4,7 +4,6 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-// import 'reset-css'
 import 'virtual:uno.css'
 import '@unocss/reset/tailwind-compat.css'
 
