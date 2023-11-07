@@ -1,7 +1,12 @@
 <template>
-  <div class="not-found">404 not-found</div>
+  <div>not-found</div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style scoped lang="scss"></style>
+<style scoped></style>
+
+<route lang="yaml">
+meta:
+  layout: 404
+</route>
