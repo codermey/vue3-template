@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { registerSW } from 'virtual:pwa-register'
 
-// test pwa
+//  pwa
 onMounted(() => {
   registerSW({
     immediate: true,

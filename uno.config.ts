@@ -6,10 +6,13 @@ import {
   transformerDirectives,
   transformerVariantGroup
 } from 'unocss'
+import presetRemToPx from '@unocss/preset-rem-to-px'
 
 export default defineConfig({
+  shortcuts: { 'bg-image': 'w-full h-full bg-cover bg-center-top bg-no-repeat' },
   presets: [
     presetWind(),
+    presetRemToPx(),
     presetIcons({
       prefix: 'i-',
       extraProperties: {

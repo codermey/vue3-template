@@ -1,10 +1,13 @@
 import { fileURLToPath, URL } from 'node:url'
+import path from 'path'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import UnoCSS from 'unocss/vite'
+import prism from 'markdown-it-prism'
+import Markdown from 'unplugin-vue-markdown/vite'
 import Layouts from 'vite-plugin-vue-layouts'
 import VueRouter from 'unplugin-vue-router/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -14,12 +17,15 @@ import postcsspxtoviewport8plugin from 'postcss-px-to-viewport-8-plugin'
 import { VitePWA } from 'vite-plugin-pwa'
 import { viteMockServe } from 'vite-plugin-mock'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { unheadVueComposablesImports } from '@unhead/vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     VueRouter({}),
     vue({
+      include: [/\.vue$/, /\.md$/],
       script: {
         defineModel: true,
         propsDestructure: true
@@ -27,6 +33,7 @@ export default defineConfig({
     }),
     vueJsx(),
     UnoCSS(),
+    Markdown({ headEnabled: true, markdownItUses: [prism] }),
     AutoImport({
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
@@ -38,10 +45,15 @@ export default defineConfig({
         // presets
         'vue',
         '@vueuse/core',
-        VueRouterAutoImports
+        VueRouterAutoImports,
+        unheadVueComposablesImports
       ]
     }),
-    Components({}),
+    Components({
+      dirs: ['src/components', 'src/contents'],
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/]
+    }),
     Layouts({
       layoutsDirs: 'src/layouts',
       defaultLayout: 'default'
@@ -70,6 +82,12 @@ export default defineConfig({
           }
         ]
       }
+    }),
+    createSvgIconsPlugin({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+      // 指定symbolId格式
+      symbolId: 'icon-[dir]-[name]'
     })
   ],
   resolve: {
