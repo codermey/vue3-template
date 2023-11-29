@@ -1,3 +1,4 @@
 {
+  "css.customData": [".vscode/unocss.json"],
   "typescript.preferences.autoImportFileExcludePatterns": ["vue-router"]
 }
