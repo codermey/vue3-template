@@ -3,6 +3,7 @@ import {
   defineConfig,
   presetIcons,
   presetWind,
+  presetAttributify,
   transformerDirectives,
   transformerVariantGroup
 } from 'unocss'
@@ -13,6 +14,7 @@ export default defineConfig({
   presets: [
     presetWind(),
     presetRemToPx(),
+    presetAttributify(),
     presetIcons({
       prefix: 'i-',
       extraProperties: {
